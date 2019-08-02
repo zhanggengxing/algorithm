@@ -100,3 +100,30 @@
         return pre;
     }
 ```
+
+## 3. 斐波那契数列求第n项
+### 算法描述
+     斐波那契数，通常用 F(n) 表示，形成的序列称为斐波那契数列。该数列由 0 和 1 开始，后面的每一项数字都是前面两项数字的和。也就是：
+     <pre>
+          F(0) = 0,   F(1) = 1
+          F(n) = F(n - 1) + F(n - 2), 其中 n > 1.
+     </pre>
+     给定 n，计算 F(n)。
+     
+### 实现一、递归实现
+```java
+     /**
+     * 斐波那契数列求第n项-递归实现
+     * @param n
+     * @return
+     */
+    public int fibnaci(int n) {
+        if (n == 1) {
+            return 0;
+        } else if (n == 2) {
+            return 1;
+        } else {
+            return fibnaci(n-1) + fibnaci(n-2);
+        }
+    }
+```
