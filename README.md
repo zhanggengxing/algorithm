@@ -127,3 +127,29 @@
         }
     }
 ```
+### 实现二、非递归实现
+```java
+     /**
+     * 斐波那契数列求第n项-非递归实现：记录第n项的前两项first、second，F(n)=first+second
+     * @param n
+     * @return
+     */
+    public static int fibnaci(int n) {
+        if (n < 0) {
+            return -1;
+        } else if (n == 0) {
+            return 0;
+        } else if (n == 1) {
+            return 1;
+        } else {
+            int first = 0, second = 1;
+            //记录第n项的前两项first、second，F(n)=first+second
+            for (int i = 2; i < n; i++) {
+                int tmp = second;
+                second = first + second;
+                first = tmp;
+            }
+            return first + second;
+        }
+    }
+```
